@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wearable Science — Multi-Sensor | SmartGrip AI</title>
+  <meta name="description" content="How SmartGrip AI integrates IMU and multi-zone pressure sensors, filters interference, and turns handle motion into training metrics.">
+  <link rel="icon" href="assets/images/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html"><span class="mark">S</span> SmartGrip AI</a>
+    <nav class="nav-links">
+      <a href="index.html">Overview</a>
+      <a class="active" href="technology.html">Wearable Science</a>
+      <a href="module.html">The Module</a>
+      <a href="prototype.html">Prototype Lab</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+    <a class="nav-cta" href="module.html">View the chip</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-media">
+        <img src="assets/images/smartgrip-mems.png" alt="Macro photograph of a MEMS inertial sensor die with gold bond wires">
+      </div>
+      <div class="hero-copy wrap">
+        <p class="kicker">Wearable science / Multi-sensor</p>
+        <h1>Sensors that work<br>together, not alone.</h1>
+        <p class="lede">SmartGrip products integrate an inertial measurement unit and a pressure array in the same handle. The sensors calibrate one another so a swing can be described as motion and as a hand event at the same time.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split top">
+        <div>
+          <p class="eyebrow">Functional integration</p>
+          <h2>All-in-one at handle scale.</h2>
+        </div>
+        <div>
+          <p>Everyday objects already hide MEMS devices — phones, watches, aircraft. Micro-electromechanical systems shrink mechanical sensing onto a chip. SmartGrip uses that density so a 70 mm capsule can hold acceleration, rotation, pressure, time, and a radio.</p>
+          <p class="muted">Each sensor is useful. The system is the point: gyroscope + accelerometer describe a vector; pressure zones describe how the hand produced it; the MCU keeps a shared clock so the two stories stay aligned.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="grid-4">
+          <article class="card">
+            <div class="num">01</div>
+            <h3>Gyroscope</h3>
+            <p class="muted">Angular velocity about three axes. Used for handle rotation, face stability, and the difference between a flat drive and a brushed finish.</p>
+          </article>
+          <article class="card">
+            <div class="num">02</div>
+            <h3>Accelerometer</h3>
+            <p class="muted">Linear acceleration including gravity. Used to estimate swing intensity, impact transients, and to help stabilize gyro drift.</p>
+          </article>
+          <article class="card">
+            <div class="num">03</div>
+            <h3>Pressure array</h3>
+            <p class="muted">Multi-zone force around the grip. Used for stability, left–right bias, and how the hand changes before and after contact.</p>
+          </article>
+          <article class="card">
+            <div class="num">04</div>
+            <h3>Time + radio</h3>
+            <p class="muted">A shared sample clock on the MCU, then Bluetooth Low Energy to the phone. Features can be extracted on-device to save energy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper">
+      <div class="wrap">
+        <p class="eyebrow">Sensor science</p>
+        <h2>What each channel actually measures.</h2>
+        <div class="sensor-tabs">
+          <button class="active" data-group="science" data-tab="gyro">Gyroscope</button>
+          <button data-group="science" data-tab="accel">Accelerometer</button>
+          <button data-group="science" data-tab="pressure">Pressure</button>
+          <button data-group="science" data-tab="fusion">Fusion</button>
+        </div>
+
+        <div class="sensor-panel" data-group="science" data-panel="gyro">
+          <div class="split top">
+            <div>
+              <h3>Angular momentum, as a vector</h3>
+              <p>A gyroscope observes change in orientation about x, y, and z. Angular speed is not the same as linear speed: without rotation the gyro reads near zero even if the racket is flying forward.</p>
+              <p>If the handle rotates on one axis while the others stay quiet, that axis is the story — a rolling serve, a late wrist, a face that opens. Consumer MEMS gyros typically use Coriolis force on an oscillating mass rather than a spinning wheel.</p>
+            </div>
+            <div class="card">
+              <p class="mono small">Output · deg/s</p>
+              <div class="metric-bars">
+                <div class="bar"><span>ωx roll</span><i><em data-width="62"></em></i><span>124</span></div>
+                <div class="bar"><span>ωy pitch</span><i><em data-width="84"></em></i><span>210</span></div>
+                <div class="bar"><span>ωz yaw</span><i><em data-width="38"></em></i><span>71</span></div>
+              </div>
+              <p class="note">Illustrative handle rates during a forehand. Not a player record.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sensor-panel" data-group="science" data-panel="accel" hidden>
+          <div class="split top">
+            <div>
+              <h3>Motion acceleration and gravity</h3>
+              <p>An accelerometer measures both the acceleration of the handle and the gravitational field. Gravity changes slowly, so it is a useful reference for leveling and for helping a gyro keep a usable attitude estimate.</p>
+              <p>Motion acceleration can be integrated — carefully, with constraints — toward velocity and path. Impact shows up as a sharp transient. SmartGrip treats handle speed as an <em>estimate</em>, not a radar reading of the ball.</p>
+            </div>
+            <div class="card">
+              <p class="mono small">Output · g</p>
+              <div class="metric-bars">
+                <div class="bar"><span>ax</span><i><em data-width="48"></em></i><span>1.4</span></div>
+                <div class="bar"><span>ay</span><i><em data-width="76"></em></i><span>3.1</span></div>
+                <div class="bar"><span>az</span><i><em data-width="55"></em></i><span>1.8</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sensor-panel" data-group="science" data-panel="pressure" hidden>
+          <div class="split top">
+            <div>
+              <h3>A map of the hand, not a single squeeze</h3>
+              <p>A lone force sensor can say “harder” or “softer.” A wrap of zones can say where. SmartGrip’s concept layer is a flexible circuit around the foam: gold traces, multiple cells, sampled in sync with the IMU.</p>
+              <p>That is how the system looks for a death-grip on the serve, a slack eastern grip that collapses on the backhand, or a pressure spike that arrives after contact instead of before.</p>
+            </div>
+            <div>
+              <div class="zones" aria-label="Pressure zones">
+                <button class="zone" data-note="Index-finger bevel — often rises just before a kick serve.">Z1</button>
+                <button class="zone active" data-note="Heel pad — primary stability zone for a continental grip.">Z2</button>
+                <button class="zone" data-note="Ring / pinky stack — late tightening can signal fatigue.">Z3</button>
+                <button class="zone" data-note="Thumb side — useful for eastern vs semi-western contrast.">Z4</button>
+                <button class="zone" data-note="Upper wrap, racket-head side.">Z5</button>
+                <button class="zone" data-note="Mid-handle, hitting-side face.">Z6</button>
+                <button class="zone" data-note="Mid-handle, opposite face.">Z7</button>
+                <button class="zone" data-note="Lower wrap near the butt cap.">Z8</button>
+              </div>
+              <p class="note" data-zone-readout>Heel pad — primary stability zone for a continental grip.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sensor-panel" data-group="science" data-panel="fusion" hidden>
+          <div class="split top">
+            <div>
+              <h3>Multi-function coordination</h3>
+              <p>Gyroscopes give direction of rotation. Accelerometers give acceleration. Together they approximate a motion vector. Pressure gives the human cause. Time turns the vector into a stroke.</p>
+              <p>On-device, a complementary or Madgwick-style filter keeps a rough attitude. Features — peak rate, impact time, pressure centroid — are extracted before Bluetooth, so a full session can survive on a small cell.</p>
+            </div>
+            <div class="card">
+              <p>Pipeline</p>
+              <p class="mono small muted">Physical motion → sensors → raw frames → MCU filter → feature extract → BLE → app → analytics → player language</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Tennis applications</p>
+        <h2>From sensor fusion to court language.</h2>
+        <p class="muted">The same pairing that a running watch uses for cadence and oscillation is pointed at strokes. Names stay honest: estimated swing speed, experimental stroke class, conceptual racket match.</p>
+        <div class="sensor-tabs">
+          <button class="active" data-group="app" data-tab="speed">Swing speed</button>
+          <button data-group="app" data-tab="face">Face stability</button>
+          <button data-group="app" data-tab="grip">Grip stability</button>
+          <button data-group="app" data-tab="stroke">Stroke pattern</button>
+        </div>
+        <div class="sensor-panel card" data-group="app" data-panel="speed">
+          <h3>Estimated swing speed</h3>
+          <p>Handle velocity is inferred from inertial data and a geometric model of racket length. It is not ball speed. Ball speed depends on impact location, stringbed, incoming ball, and energy transfer the handle cannot see directly.</p>
+          <p class="note">First-generation claim: estimate swing speed. Future work: calibrate against radar or high-speed video.</p>
+        </div>
+        <div class="sensor-panel card" data-group="app" data-panel="face" hidden>
+          <h3>Face and handle rotation</h3>
+          <p>Gyro channels around contact describe whether the face stayed quiet or rolled. Combined with impact transients on the accelerometer, this is a way to talk about late opening or brushing without needing a camera on every ball.</p>
+        </div>
+        <div class="sensor-panel card" data-group="app" data-panel="grip" hidden>
+          <h3>Grip stability</h3>
+          <p>Stability is the opposite of chaotic zone-to-zone change. A high score means the pressure centroid stayed coherent through the swing. A drop late in a session is one of the more useful fatigue signals in the concept.</p>
+        </div>
+        <div class="sensor-panel card" data-group="app" data-panel="stroke" hidden>
+          <h3>Stroke recognition — attempted, not assumed</h3>
+          <p>Forehand, backhand, and serve produce different rotation signatures and different pressure maps. The prototype treats classification as a hypothesis to test against repeated swings and, later, video sync. Mislabels are expected in v1.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="wrap">
+        <p class="eyebrow">Architecture</p>
+        <h2>Five layers, one clock.</h2>
+        <div class="arch" style="margin-top: 28px;">
+          <div class="arch-row"><div class="mono small">Player</div><div>The hand, the intent, the fatigue, the habit.</div></div>
+          <div class="arch-row"><div class="mono small">Racket / grip</div><div>Pressure zones + IMU at the handle. This is the only place physics is sampled.</div></div>
+          <div class="arch-row"><div class="mono small">Electronics</div><div>MCU, filtering, memory, BLE, battery. Feature extraction prefers the handle so the radio can sleep.</div></div>
+          <div class="arch-row"><div class="mono small">Mobile app</div><div>Session views, history, player profile. Language a human can finish reading between changeovers.</div></div>
+          <div class="arch-row"><div class="mono small">Analytics</div><div>Swing, grip, experimental matching, training prompts. Cloud is optional; the first prototype can stay on-device + phone.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Honesty in the numbers</p>
+          <h2>What the handle cannot know.</h2>
+          <ul class="list">
+            <li>True ball speed is not handle speed.</li>
+            <li>A few pressure cells cannot image every finger phalanx.</li>
+            <li>Matching a player to a racket needs many sessions, many frames.</li>
+            <li>Mounting position and racket model change calibration.</li>
+            <li>Battery mass fights feel; capacity is an engineering trade, not a slogan.</li>
+          </ul>
+        </div>
+        <div>
+          <figure class="figure">
+            <img src="assets/images/smartgrip-pcb-module.png" alt="Slender green SmartGrip PCB with IMU, MCU, antenna, and cylindrical cell">
+          </figure>
+          <div class="caption"><span>Production-intent capsule PCB</span><span>After the Tracer-scale functional board</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div>SmartGrip AI · Wearable science</div>
+    <div>Sensor figures are reference patterns, not personal records</div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
