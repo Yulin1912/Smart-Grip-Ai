@@ -1,22 +1,22 @@
-# SmartGrip AI
+# RestGuard
 
-A concept + proof-of-concept website for **SmartGrip AI**, a miniature tennis-handle motion system.
+A concept + portfolio-prototype website for **RestGuard**, a non-contact disturbance monitor for animal-care enclosures.
 
 The site is written in the language of two references:
 
 - [Garmin Wearable Science — Multi-Sensor](https://ph.garmin.com/minisite/garmin-technology/wearable-science/multi-sensor/)
 - [Dyson Demo VR / Rethinking technology](https://www.dyson.com/discover/innovation/rethinking-technology/dyson-demo-vr)
 
-The electronics object is shown as a Tracer-like assembled IMU board, in the same product-photo language as [elektroThing’s Tracer](https://www.hackster.io/elektroThing/tracer-a-wearable-for-your-things-d9fc16).
+The electronics object is shown as a Tracer-like assembled board, in the same product-photo language as [elektroThing’s Tracer](https://www.hackster.io/elektroThing/tracer-a-wearable-for-your-things-d9fc16), on the warm cream palette from the RestGuard portfolio (`#F5F4EE`, sage, gold).
 
 ## Pages
 
 | Page | Intent |
 | --- | --- |
-| `index.html` | Cinematic product story, problem, goals, app concept |
-| `technology.html` | Multi-sensor science: gyro, accel, pressure, fusion |
-| `module.html` | Hardware object — chip photo, specs, capsule, exploded stack |
-| `prototype.html` | Form vs function prototypes, tests, limits, next work |
+| `index.html` | Cinematic product story, problem, live score demo, staff app |
+| `technology.html` | Multi-sensor science: ToF, MEMS mic, reed, fusion |
+| `module.html` | Hardware object — chip photo, specs, enclosure, exploded stack |
+| `prototype.html` | Prototype levels, tests, ethics, limits, next evidence |
 
 ## Local preview
 
@@ -36,4 +36,4 @@ Settings → Pages → Deploy from branch `main` / root. After that the public U
 
 ## Positioning
 
-SmartGrip AI investigates the relationship between player movement, grip pressure, and racket dynamics. Metrics on the site are **estimated / experimental / conceptual**. They are training insight, not radar-certified ball speed or medical advice.
+RestGuard reports measurable environmental events and offers visitor guidance. It does **not** diagnose stress, store raw audio or images, or replace trained staff. The disturbance score is a prototype formula, not a welfare standard.

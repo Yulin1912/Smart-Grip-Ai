@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Module — SmartGrip tracker chip | SmartGrip AI</title>
-  <meta name="description" content="The SmartGrip electronics module: a Tracer-like IMU wearable for the tennis racket, then a 70 mm capsule that hides in the handle.">
+  <title>The Module — RestGuard tracker chip | RestGuard</title>
+  <meta name="description" content="The RestGuard electronics module: a Tracer-like ESP32-S3 board for bench sensing, then a 100 × 70 × 30 mm enclosure that mounts outside the animal space.">
   <link rel="icon" href="assets/images/mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="index.html"><span class="mark">S</span> SmartGrip AI</a>
+    <a class="brand" href="index.html"><span class="mark">R</span> RestGuard</a>
     <nav class="nav-links">
       <a href="index.html">Overview</a>
       <a href="technology.html">Wearable Science</a>
@@ -28,25 +28,25 @@
     <section class="section" style="padding-top: 120px;">
       <div class="wrap">
         <p class="kicker">Hardware object / Functional prototype</p>
-        <h1 class="display">The chip that wears the racket.</h1>
-        <p class="lede muted">Before the capsule disappears inside a handle, the system has to prove it can collect useful tennis motion. The first electronics object is a compact IMU tracker — the same visual language as a Tracer wearable: a real assembled PCB, strap slots, a dense top side, a cell on the back.</p>
+        <h1 class="display">The chip that watches the doorway — not the animal.</h1>
+        <p class="lede muted">Before the cream shell sits on an enclosure, the system has to prove it can count useful events. The first electronics object is a compact tracker in the same visual language as a Tracer wearable: a real assembled PCB, strap slots for a bench fixture, a dense top side, USB on the edge.</p>
       </div>
     </section>
 
     <section class="section" style="padding-top: 0;">
       <div class="wrap">
         <div class="chip-stage" id="chip">
-          <img src="assets/images/smartgrip-chip-tracer.png" alt="SmartGrip Tracer-style IMU tracker PCB, top-down product photograph">
-          <button class="hotspot" style="left: 28%; top: 42%;" aria-label="Microcontroller"></button>
-          <div class="hotspot-card" style="left: 8%; top: 18%;"><strong>MCU</strong><br>ESP32-class radio + compute. Samples sensors, keeps time, compresses features, speaks BLE.</div>
-          <button class="hotspot" style="left: 48%; top: 38%;" aria-label="IMU"></button>
-          <div class="hotspot-card" style="left: 52%; top: 14%;"><strong>6-axis IMU</strong><br>LSM6-class accelerometer and gyroscope. The primary motion instrument.</div>
-          <button class="hotspot" style="left: 62%; top: 52%;" aria-label="Time-of-flight"></button>
-          <div class="hotspot-card" style="left: 64%; top: 58%;"><strong>Auxiliary ToF</strong><br>Optional ranging / gesture channel on the functional board. Not required in the hidden capsule.</div>
-          <button class="hotspot" style="left: 38%; top: 68%;" aria-label="USB"></button>
-          <div class="hotspot-card" style="left: 12%; top: 72%;"><strong>USB + charge</strong><br>Bring-up, firmware, and TP4056-class charging for the functional prototype.</div>
+          <img src="assets/images/restguard-chip-tracer.png" alt="RestGuard Tracer-style ESP32-S3 tracker PCB, top-down product photograph on a warm cream background">
+          <button class="hotspot" style="left: 48%; top: 38%;" aria-label="Microcontroller"></button>
+          <div class="hotspot-card" style="left: 8%; top: 16%;"><strong>ESP32-S3</strong><br>Wi-Fi and Bluetooth, local filtering, 30-minute window, disturbance score. Production still needs power and security review.</div>
+          <button class="hotspot" style="left: 28%; top: 48%;" aria-label="Time-of-flight"></button>
+          <div class="hotspot-card" style="left: 6%; top: 58%;"><strong>VL53L1X ToF</strong><br>Visitor ranging with programmable ROI. Limited to the local approach zone; glass needs calibration.</div>
+          <button class="hotspot" style="left: 22%; top: 68%;" aria-label="Microphone"></button>
+          <div class="hotspot-card" style="left: 4%; top: 78%;"><strong>Digital MEMS mic</strong><br>I²S sound-level input. RMS only — never treated as a recorder.</div>
+          <button class="hotspot" style="left: 50%; top: 78%;" aria-label="USB"></button>
+          <div class="hotspot-card" style="left: 54%; top: 72%;"><strong>USB-C + charge</strong><br>Bring-up, firmware, and TP4056-class charging on the functional board. The enclosure concept is USB-powered, no sealed cell.</div>
         </div>
-        <div class="caption"><span>SmartGrip tracker · photographed as a hardware object</span><span>Hover the nodes</span></div>
+        <div class="caption"><span>RestGuard tracker · photographed as a hardware object</span><span>Hover the nodes</span></div>
       </div>
     </section>
 
@@ -54,22 +54,22 @@
       <div class="wrap split top">
         <div>
           <p class="eyebrow">Specification · functional board</p>
-          <h2>Built to be strapped, then shrunk.</h2>
-          <p>The functional prototype can ride a velcro strap on the throat or handle while algorithms are still loud and honest. The form prototype later hides a slimmer PCB in the butt.</p>
+          <h2>Built to be fixtured, then housed.</h2>
+          <p>The functional prototype can ride a strap on a test stand while algorithms are still loud and honest. The form prototype later hides a quieter PCB in the cream shell. The strap is for the bench — never for a collar.</p>
           <table class="spec-table">
-            <tr><th>Compute / radio</th><td>ESP32-class MCU, BLE 4.2 / 5, 4 MB flash class</td></tr>
-            <tr><th>IMU</th><td>6-axis MEMS, accel ±2 to ±16 g, gyro ±125 to ±2000 dps</td></tr>
-            <tr><th>Grip interface</th><td>FPC / analog front-end for multi-zone pressure (capsule revision)</td></tr>
-            <tr><th>Power</th><td>Li-ion / Li-Po, on-board charge, 3.3 V LDO</td></tr>
-            <tr><th>Mass target</th><td>~20 g including early strap hardware</td></tr>
-            <tr><th>Capsule target</th><td>60–80 × 15–20 × 8–12 mm, verify per handle cavity</td></tr>
-            <tr><th>Endurance intent</th><td>One full training block; 10+ h is a product goal after duty-cycle work</td></tr>
-            <tr><th>Mounting</th><td>Strap slots and M2 holes on the lab board; ABS holder in the handle</td></tr>
+            <tr><th>Compute / radio</th><td>ESP32-S3, Wi-Fi + Bluetooth, local web staff page</td></tr>
+            <tr><th>Presence</th><td>VL53L1X time-of-flight, ~0.3–1.5 m visitor zone, Class 1 emitter</td></tr>
+            <tr><th>Sound</th><td>Digital I²S MEMS microphone, RMS summaries only</td></tr>
+            <tr><th>Door</th><td>External reed switch + magnet, ≥99% event capture target</td></tr>
+            <tr><th>Outputs</th><td>RGB status ring, small monochrome e-paper, recessed staff button</td></tr>
+            <tr><th>Power</th><td>USB-C on the enclosure concept; charge IC on the lab board</td></tr>
+            <tr><th>Enclosure target</th><td>100 × 70 × 30 mm rounded shell, matte ABS/PC blend</td></tr>
+            <tr><th>Mounting</th><td>Strap slots / M2 on the lab board; sage plate or magnet on the enclosure</td></tr>
           </table>
         </div>
         <div>
           <figure class="figure">
-            <img src="assets/images/smartgrip-chip-angle.png" alt="Three-quarter studio photo of the SmartGrip PCB">
+            <img src="assets/images/restguard-chip-angle.png" alt="Three-quarter studio photo of the RestGuard PCB with a red fixture strap on cream">
           </figure>
           <div class="caption"><span>Three-quarter · studio</span><span>JLCPCB-style assembled prototype</span></div>
         </div>
@@ -79,19 +79,19 @@
     <section class="section">
       <div class="wrap split">
         <div>
-          <p class="eyebrow">Capsule revision</p>
-          <h2>A pill that can vanish.</h2>
-          <p class="muted">Industrial language: slender capsule, radiused ends, matte graphite, one LED, no proud edges. Length about 70 mm, width 18 mm, thickness 10 mm. The PCB inside is a green strip: pressure connector, IMU, MCU, memory, antenna, cell.</p>
+          <p class="eyebrow">Enclosure revision</p>
+          <h2>A quiet object on the wall.</h2>
+          <p class="muted">Industrial language: rounded cream shell, black bezel, one ring, one e-paper sentence, a recessed staff control. USB-C on the edge. RestGuard printed softly on the fascia. No proud edges inside the animal space — because the device is not inside the animal space.</p>
           <div class="led-row" style="margin: 22px 0;">
-            <button class="led-btn active" data-led="connected">Connected</button>
-            <button class="led-btn" data-led="standby">Standby</button>
-            <button class="led-btn" data-led="recording">Recording</button>
-            <button class="led-btn" data-led="battery">Low battery</button>
+            <button class="led-btn active" data-led="quiet">Quiet viewing</button>
+            <button class="led-btn" data-led="space">Please give space</button>
+            <button class="led-btn" data-led="rest">Rest period</button>
+            <button class="led-btn" data-led="neutral">Neutral after reboot</button>
           </div>
-          <p><span class="led-dot" data-led-dot style="background:#3d9eff;color:#3d9eff"></span><span data-led-label>Blue — Connected</span></p>
+          <p><span class="led-dot" data-led-dot style="background:#3dcc6a;color:#3dcc6a"></span><span data-led-label>Green — Quiet viewing</span></p>
         </div>
         <figure class="figure">
-          <img src="assets/images/smartgrip-capsule.png" alt="Matte graphite pill-shaped SmartGrip capsule with a blue status LED">
+          <img src="assets/images/restguard-hands-on.png" alt="Hands holding the RestGuard enclosure, green ring lit, USB-C visible, a dog resting in the background">
         </figure>
       </div>
     </section>
@@ -99,48 +99,48 @@
     <section class="section" style="padding-top: 0;">
       <div class="wrap">
         <figure class="figure">
-          <img class="media-full" src="assets/images/smartgrip-pcb-module.png" alt="Top-down slender green PCB with labeled component regions">
+          <img class="media-full" src="assets/images/restguard-device-wide.jpeg" alt="RestGuard on a light wall beside glass, green ring and Quiet viewing message">
         </figure>
-        <div class="caption"><span>Capsule PCB layout</span><span>Pressure · IMU · MCU · Memory · BLE · Cell</span></div>
+        <div class="caption"><span>Public face</span><span>Ring · e-paper · staff button</span></div>
       </div>
     </section>
 
     <section class="section" id="exploded">
       <div class="wrap">
         <p class="eyebrow">Mechanical stack</p>
-        <h2>Exploded, then seated on axis.</h2>
-        <p class="muted">Outside to inside: grip wrap, shock foam, flexible pressure sheet, electronics core, ABS holder, silicone seal, butt cap. Centered mass is a balance decision, not a packaging leftover.</p>
+        <h2>Exploded, then mounted outside.</h2>
+        <p class="muted">Front shell, sensor bezel with light pipe and mic port, electronics, silicone gasket, rear shell, replaceable sage mounting plate. Tool-accessed rear cover. No exposed edge or wire inside the enclosure.</p>
       </div>
       <div class="wrap" style="margin-top: 28px;">
         <figure class="figure">
-          <img src="assets/images/smartgrip-exploded.png" alt="Exploded tennis-grip assembly in a dark studio">
+          <img src="assets/images/restguard-exploded.jpeg" alt="Exploded RestGuard layers from cream front shell to sage strap plate">
         </figure>
       </div>
       <div class="wrap grid-3" style="margin-top: 22px;">
-        <article class="card"><h3>1–2 · Skin</h3><p class="muted">Wrap and foam keep the handle familiar. Electronics must not print through the palm.</p></article>
-        <article class="card"><h3>3–4 · Sense</h3><p class="muted">Gold-trace flex for zones; rigid module for IMU, compute, and energy.</p></article>
-        <article class="card"><h3>5–6 · Hold</h3><p class="muted">ABS chassis, seal, replaceable cap. Nothing loose in a vibration environment.</p></article>
+        <article class="card"><h3>1–2 · Skin</h3><p class="muted">Recycled ABS/PC blend, matte. Dark bezel holds the optical window, light pipe and mic port.</p></article>
+        <article class="card"><h3>3–4 · Sense</h3><p class="muted">Custom PCB or development modules: ToF, MEMS mic, MCU, ring driver, USB-C.</p></article>
+        <article class="card"><h3>5–6 · Hold</h3><p class="muted">Gasket, rear shell, sage plate. Magnetic or strap attachment — always external.</p></article>
       </div>
     </section>
 
     <section class="section" style="padding-top: 0;">
       <div class="wrap split">
         <figure class="figure">
-          <img src="assets/images/smartgrip-cutaway.png" alt="Longitudinal cutaway of a tennis handle showing the module on the shaft axis">
+          <img src="assets/images/restguard-enclosure-life.png" alt="Adoption-centre calm spaces with RestGuard units mounted outside glass enclosures">
         </figure>
         <div>
-          <p class="eyebrow">Cutaway</p>
-          <h2>The cavity is the product.</h2>
-          <p class="muted">A good engineering report does not pretend every frame accepts the same brick. Cavity maps, balance-point shift, and a removable module are first-class requirements: lightweight, compact, durable, comfortable, safe, replaceable.</p>
-          <a class="btn" href="prototype.html">How the two prototypes split the risk</a>
+          <p class="eyebrow">In the room</p>
+          <h2>The wall is the product.</h2>
+          <p class="muted">A good engineering report does not pretend every kennel accepts the same brick. Replaceable plates, USB routing, cleaning chemicals, and a pull test on the strap are first-class requirements: compact, durable, serviceable, private, safe.</p>
+          <a class="btn" href="prototype.html">How the prototype levels split the risk</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer wrap">
-    <div>SmartGrip AI · The module</div>
-    <div>Functional board first · capsule second</div>
+    <div>RestGuard · The module</div>
+    <div>Functional board first · enclosure second</div>
   </footer>
   <script src="assets/js/main.js"></script>
 </body>
