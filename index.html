@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartGrip AI — Understand your racket. Improve your game.</title>
-  <meta name="description" content="SmartGrip AI is a miniature motion-analysis system hidden inside a tennis racket handle. It turns grip pressure, swing dynamics, and racket motion into training feedback.">
+  <title>RestGuard — Make cumulative disturbance visible</title>
+  <meta name="description" content="RestGuard is a non-contact disturbance monitor for animal-care enclosures. It watches visitor approach, sound level and door openings, then offers quiet, explainable guidance.">
   <link rel="icon" href="assets/images/mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
   <header class="nav">
-    <a class="brand" href="index.html"><span class="mark">S</span> SmartGrip AI</a>
+    <a class="brand" href="index.html"><span class="mark">R</span> RestGuard</a>
     <nav class="nav-links">
       <a class="active" href="index.html">Overview</a>
       <a href="technology.html">Wearable Science</a>
@@ -28,17 +28,17 @@
   <main id="content">
     <section class="hero">
       <div class="hero-media">
-        <img src="assets/images/smartgrip-lifestyle.png" alt="Close crop of a tennis racket handle on court, with a faint blue mark on the butt cap">
+        <img src="assets/images/restguard-hero.png" alt="RestGuard mounted outside a glass enclosure where a tabby cat sleeps on a sage cushion">
       </div>
       <div class="hero-copy wrap reveal">
-        <p class="kicker">Sports engineering / Wearable technology</p>
-        <h1>Understand your<br>racket. Improve<br>your game.</h1>
-        <p class="lede">SmartGrip AI is a hidden sensor system inside the handle — built to answer three questions traditional coaching cannot see at millisecond scale.</p>
+        <p class="kicker">Animal-care engineering / Non-contact sensing</p>
+        <h1>Make cumulative<br>disturbance visible.</h1>
+        <p class="lede">A compact device for adoption centres, pet-care retailers and boarding rooms. It watches the enclosure–visitor boundary — not the animal — and turns three environmental events into one humane public state.</p>
         <div class="hero-meta">
-          <div>Concept + proof of concept<strong>Prototype stage</strong></div>
-          <div>Module mass<strong>~20 g</strong></div>
-          <div>Target envelope<strong>70 × 18 × 10 mm</strong></div>
-          <div>Link<strong>Grip + motion + racket</strong></div>
+          <div>Concept + portfolio prototype<strong>August 2026</strong></div>
+          <div>Enclosure<strong>100 × 70 × 30 mm</strong></div>
+          <div>Mounting<strong>Outside, no contact</strong></div>
+          <div>Privacy<strong>No camera, no audio archive</strong></div>
         </div>
       </div>
     </section>
@@ -46,42 +46,56 @@
     <section class="section">
       <div class="wrap split top">
         <div>
-          <p class="eyebrow">01 / The problem</p>
-          <h2>The swing happens faster than the eye.</h2>
+          <p class="eyebrow">01 / The opportunity</p>
+          <h2>Many small disturbances become one invisible problem.</h2>
         </div>
         <div>
-          <p>Coaches and players already have excellent tools: live observation, video replay, and feel. Those methods are valuable. They also miss events that last a few milliseconds — pressure shifts in the hand, a quiet rotation of the handle, a face that opens just before contact.</p>
-          <p class="muted">SmartGrip AI does not replace the coach. It adds a data layer to the relationship between player, racket, and ball.</p>
+          <p>A visitor approaches. Another opens the door. Noise continues. Staff can see each event, but the accumulated pattern is difficult to hold across visitors and shifts.</p>
+          <p class="muted">Existing pet technology is dominated by location tracking, feeding and health wearables. RestGuard instead focuses on the enclosure–visitor boundary — so animals keep choice and control, and visitors get a clear, kind instruction.</p>
         </div>
       </div>
       <div class="wrap questions" style="margin-top: 56px;">
-        <div class="q"><span>01</span><div><h3>How does the player swing?</h3><p class="muted">Estimated swing speed, acceleration, angular motion, and rhythm from a 6-axis IMU seated in the handle.</p></div></div>
-        <div class="q"><span>02</span><div><h3>How does the player hold the racket?</h3><p class="muted">Multi-zone pressure sensing around the grip, before and after contact, including left–right imbalance and fatigue drift.</p></div></div>
-        <div class="q"><span>03</span><div><h3>Is this racket right for this player?</h3><p class="muted">An experimental compatibility score from player traits, swing character, grip behaviour, and racket dynamics — conceptual, not certified.</p></div></div>
+        <div class="q"><span>01</span><div><h3>How close is the visitor?</h3><p class="muted">Time-of-flight proximity with a dwell rule, so people who simply walk past are not counted as an approach.</p></div></div>
+        <div class="q"><span>02</span><div><h3>How loud has the room been?</h3><p class="muted">A digital MEMS microphone treated as a sound-level sensor. Only short-window RMS summaries are kept — never a waveform or speech.</p></div></div>
+        <div class="q"><span>03</span><div><h3>Did the door just open?</h3><p class="muted">A magnetic reed switch counts open and close events. Handling is visible without a camera on the animal.</p></div></div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section sage">
       <div class="wrap">
-        <p class="eyebrow">02 / Product appearance</p>
-        <h2>Minimal. Technical. Athletic.</h2>
-        <p class="lede muted">The product should not look like a gadget taped to a racket. It should look like part of professional tennis equipment — a hidden module, a single status LED, a quiet S on the butt cap.</p>
+        <p class="eyebrow">02 / Product concept</p>
+        <h2>Sense three events. Communicate one simple state.</h2>
+        <p class="lede muted">Colour is always paired with plain language, so the system never depends on colour perception alone. Staff judgment always takes priority.</p>
+        <div class="grid-3" style="margin-top: 36px;">
+          <article class="card"><div class="num">Green</div><h3>Quiet viewing</h3><p class="muted">Observe calmly. Score 0–10 in the rolling 30-minute window.</p></article>
+          <article class="card"><div class="num">Amber</div><h3>Please give space</h3><p class="muted">Disturbance is accumulating. Score 11–20. Hysteresis stops the ring from flickering.</p></article>
+          <article class="card"><div class="num">Rest</div><h3>Avoid interaction</h3><p class="muted">Score above 20, or a staff override. Do not interact unless staff directs otherwise.</p></article>
+        </div>
+        <p class="note">Not a diagnosis. RestGuard reports measurable events and offers guidance. It does not read emotions, and it does not replace trained staff.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">03 / Product appearance</p>
+        <h2>Warm on the outside. Honest on the inside.</h2>
+        <p class="lede muted">Matte recycled ABS/PC, a black sensor bezel, a readable e-paper line, and a light ring that visitors can understand from a few steps away.</p>
       </div>
       <div class="wrap" style="margin-top: 36px;">
         <figure class="figure">
-          <img src="assets/images/smartgrip-handle-hero.png" alt="Matte black tennis racket butt cap with a glowing blue S logo">
+          <img src="assets/images/restguard-device.jpeg" alt="RestGuard wall-mounted beside a glass enclosure, green ring lit, e-paper reading Quiet viewing">
         </figure>
-        <div class="caption"><span>Butt-cap concept</span><span>Status LED · White / Blue / Green / Red</span></div>
+        <div class="caption"><span>Proposed exterior · concept visualization</span><span>RGB ring · e-paper · recessed staff button</span></div>
       </div>
     </section>
 
     <section class="section paper">
       <div class="wrap split">
         <div>
-          <p class="eyebrow">03 / The module</p>
-          <h2>A wearable for the racket.</h2>
-          <p>The core electronics are a compact IMU tracker in the same family as laboratory object-tracking boards: microcontroller, 6-axis inertial sensor, memory, Bluetooth, and a small rechargeable cell — packed onto a board that can disappear inside the handle.</p>
-          <p>The reference form is a Tracer-like wearable PCB: dense, strap-mountable for early experiments, then slimmed into a 70 mm capsule for the form prototype.</p>
+          <p class="eyebrow">04 / The module</p>
+          <h2>A wearable for the enclosure — never for the animal.</h2>
+          <p>The first electronics object is a Tracer-style assembled board: microcontroller, time-of-flight, digital microphone, charge path and USB, packed onto a strap-slot PCB that can live on a bench or a test fixture.</p>
+          <p>That board is how the sensing idea is proven. The form later hides the same functions in a 100 × 70 × 30 mm shell that mounts outside the enclosure.</p>
           <div class="actions">
             <a class="btn primary" href="module.html">Open the chip page</a>
             <a class="btn" href="technology.html">Read the sensor science</a>
@@ -89,24 +103,9 @@
         </div>
         <div>
           <figure class="figure">
-            <img src="assets/images/smartgrip-chip-tracer.png" alt="Photorealistic SmartGrip IMU tracker PCB, Tracer-style assembled prototype board">
+            <img src="assets/images/restguard-chip-tracer.png" alt="Photorealistic RestGuard ESP32-S3 tracker PCB with strap slots on a warm cream studio background">
           </figure>
-          <div class="caption"><span>SmartGrip tracker · functional prototype</span><span>ESP32-class MCU · LSM6-class IMU</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <p class="eyebrow">04 / Design goals</p>
-        <h2>Turn invisible tennis into understandable data.</h2>
-        <div class="grid-3" style="margin-top: 40px;">
-          <article class="card"><div class="num">G1</div><h3>Grip analysis</h3><p class="muted">Pressure magnitude, distribution, and change through the swing — including fatigue-related grip drift.</p></article>
-          <article class="card"><div class="num">G2</div><h3>Swing analysis</h3><p class="muted">Estimated speed, acceleration, angular velocity, and timing. Stroke recognition is experimental.</p></article>
-          <article class="card"><div class="num">G3</div><h3>Racket analysis</h3><p class="muted">Handle-centered motion features used to describe dynamic behaviour, not a claim of lab-grade ball speed.</p></article>
-          <article class="card"><div class="num">G4</div><h3>Player–racket matching</h3><p class="muted">A conceptual compatibility model. Prototype scores are experimental, not medical or certified fitting advice.</p></article>
-          <article class="card"><div class="num">G5</div><h3>Training feedback</h3><p class="muted">Session views that a player can read in seconds: stability, consistency, and one clear next focus.</p></article>
-          <article class="card"><div class="num">UX</div><h3>Integration</h3><p class="muted">The innovation is the system: grip + motion + racket + language a player already understands.</p></article>
+          <div class="caption"><span>RestGuard tracker · functional prototype</span><span>ESP32-S3 · VL53L1X · MEMS mic</span></div>
         </div>
       </div>
     </section>
@@ -114,95 +113,144 @@
     <section class="section tight">
       <div class="wrap split">
         <figure class="figure">
-          <img src="assets/images/smartgrip-exploded.png" alt="Exploded assembly of grip wrap, foam, pressure layer, PCB, holder, and butt cap">
+          <img src="assets/images/restguard-exploded.jpeg" alt="Exploded RestGuard assembly: cream shell, black bezel and light ring, green PCB, rear shell, sage mounting plate">
         </figure>
         <div>
-          <p class="eyebrow">05 / Inside the handle</p>
-          <h2>Not dropped in. Designed in.</h2>
-          <p class="muted">The module sits on the handle axis to limit balance shift. Layers peel from wrap to core: grip, shock foam, flexible pressure sheet, electronics, ABS holder, silicone seal, butt cap.</p>
-          <p class="muted">Future work studies cavity geometry, module mass, and counterweight so the racket still feels like the racket.</p>
+          <p class="eyebrow">05 / Exploding views</p>
+          <h2>Compact outside. Serviceable inside.</h2>
+          <p class="muted">Front shell, sensor bezel, electronics, gasket, rear shell, replaceable mounting plate. USB-C power — no sealed battery in the first concept. Two-piece shell with captive screws so a module can be repaired instead of thrown away.</p>
+          <p class="muted">The plate is sage glass-filled nylon so one electronics unit can fit different enclosure geometries. Nothing is attached to the animal.</p>
           <a class="btn" href="module.html#exploded">See the exploded view</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ink" id="demo">
+      <div class="wrap">
+        <p class="eyebrow">06 / Getting hands-on</p>
+        <h2 style="color:#f4f1ea">A lab demo, in the browser.</h2>
+        <p class="lede">The same simulation language Dyson uses to let people try a machine: press the events, watch the score, see the ring and the message change. Prototype formula, rolling 30-minute window.</p>
+      </div>
+      <div class="wrap demo" style="margin-top: 40px;">
+        <div>
+          <div class="device" aria-hidden="true">
+            <div class="device-band">
+              <div class="ring" data-ring></div>
+              <div class="epaper" data-epaper>Quiet viewing</div>
+              <div class="staff-btn" title="Recessed staff button"><i></i><i></i><i></i></div>
+            </div>
+            <div class="device-name">RestGuard</div>
+          </div>
+        </div>
+        <div>
+          <p class="formula">D = 2P + 3O + 0.25A</p>
+          <p class="small" style="color:#c9c6bb">P qualified approaches · O door-open events · A minutes above the sound threshold</p>
+          <div class="sim-readout">
+            <div><span>P</span><b data-p>0</b></div>
+            <div><span>O</span><b data-o>0</b></div>
+            <div><span>A</span><b data-a>0</b></div>
+            <div><span>Score D</span><b data-d>0</b></div>
+          </div>
+          <div class="sim-controls">
+            <button class="sim-btn" data-sim="approach"><span>Visitor approaches + dwells</span><b>+2</b></button>
+            <button class="sim-btn" data-sim="door"><span>Door opens</span><b>+3</b></button>
+            <button class="sim-btn" data-sim="sound"><span>Minute above sound threshold</span><b>+0.25</b></button>
+            <button class="sim-btn" data-sim="reset"><span>Staff reset / relocation</span><b>0</b></button>
+            <button class="sim-btn" data-sim="rest"><span>Staff rest period</span><b>override</b></button>
+          </div>
+          <p class="note">Hysteresis: amber at 11, return to green only below 8. This is a prototype score, not a welfare standard.</p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap">
-        <p class="eyebrow">06 / Who it is for</p>
-        <h2>Players, coaches, programs.</h2>
-        <div class="grid-3" style="margin-top: 36px;">
-          <article class="card">
-            <h3>Competitive players</h3>
-            <p class="muted">Longitudinal change: swing speed, grip stability, laterality, and what happens when fatigue arrives.</p>
-          </article>
-          <article class="card">
-            <h3>Coaches</h3>
-            <p class="muted">A second channel beside video and court-side eyes. Data is evidence, not a replacement for judgment.</p>
-          </article>
-          <article class="card">
-            <h3>Recreational players</h3>
-            <p class="muted">Simpler session scores so weekend practice still produces a readable story.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top: 0;">
-      <div class="wrap">
-        <p class="eyebrow">07 / App concept</p>
-        <h2>From raw motion to a session a player can use.</h2>
-        <p class="muted lede">Numbers are estimates from handle sensors. They are for training insight, not radar-certified ball speed or medical advice.</p>
+        <p class="eyebrow">07 / Staff interface</p>
+        <h2>Every score can be traced back to a count.</h2>
+        <p class="muted lede">Summaries, not recordings. Authorized staff can start a rest period, reset after relocation, and change thresholds. The public never sees a ranking of individual animals.</p>
         <div class="phones" style="margin-top: 40px;">
           <article class="phone">
             <div class="phone-bar"></div>
-            <h4>Today’s session</h4>
-            <div class="metric"><span>Swing speed</span><b>108</b></div>
-            <div class="small muted">km/h · estimated from handle IMU</div>
-            <div class="metric"><span>Grip stability</span><b>87%</b></div>
-            <div class="metric"><span>Swing consistency</span><b>82%</b></div>
-            <div class="chart">
-              <svg viewBox="0 0 200 64" preserveAspectRatio="none">
-                <polyline fill="none" stroke="#3d9eff" stroke-width="2" points="0,48 20,44 40,36 60,40 80,22 100,28 120,18 140,24 160,16 180,20 200,12"/>
-              </svg>
+            <h4>RestGuard</h4>
+            <div class="status-card">
+              <div>
+                <div class="small muted">Enclosure A-03</div>
+                <strong>Quiet viewing</strong>
+                <div class="small muted">Score 8 / 30</div>
+              </div>
+              <div class="dot"></div>
             </div>
+            <div class="small muted">Last 30 minutes</div>
+            <div class="mini-grid">
+              <div class="mini"><span>Approaches</span><b>3</b></div>
+              <div class="mini"><span>Door opens</span><b>0</b></div>
+            </div>
+            <div class="mini">
+              <span>Sound exposure</span>
+              <div class="sound-bar"><em></em></div>
+              <div class="small muted">4 minutes above configured level</div>
+            </div>
+            <div class="phone-cta">Staff controls</div>
           </article>
           <article class="phone">
             <div class="phone-bar"></div>
-            <h4>Stroke overview</h4>
-            <div class="donut"><span><strong>96</strong><br>strokes</span></div>
-            <div class="metric"><span>Forehand</span><b>42</b></div>
-            <div class="metric"><span>Backhand</span><b>36</b></div>
-            <div class="metric"><span>Serve</span><b>18</b></div>
+            <h4>Breakdown</h4>
+            <div class="metric"><span>P · approaches</span><b>3</b></div>
+            <div class="metric"><span>O · door</span><b>0</b></div>
+            <div class="metric"><span>A · sound min</span><b>4</b></div>
+            <div class="metric"><span>D = 2P + 3O + 0.25A</span><b>7</b></div>
+            <p class="small muted" style="margin-top:18px">Why this matters: every state is an observable count — not an opaque emotion label.</p>
           </article>
           <article class="phone">
             <div class="phone-bar"></div>
-            <h4>Training insight</h4>
-            <div class="small muted">Session score</div>
-            <div class="score">84</div>
-            <p class="small muted">Focus on maintaining consistent grip pressure during high-intensity swings.</p>
-            <div class="metric"><span>Swing</span><b>86</b></div>
-            <div class="metric"><span>Grip</span><b>91</b></div>
+            <h4>Controls</h4>
+            <p class="small muted">Pause, rest, reset, thresholds. Professional judgment supersedes the algorithm.</p>
+            <div class="metric"><span>Public state</span><b>Green</b></div>
+            <div class="metric"><span>Approach zone</span><b>0.3–1.5 m</b></div>
+            <div class="metric"><span>Window</span><b>30 min</b></div>
+            <div class="phone-cta">Start rest period</div>
           </article>
         </div>
         <figure class="figure" style="margin-top: 36px;">
-          <img src="assets/images/smartgrip-app-ui.png" alt="Three dark-mode phones showing SmartGrip session, stroke, and insight screens">
+          <img src="assets/images/restguard-app-source.png" alt="Staff interface concept showing enclosure A-03, quiet viewing, and event counts">
         </figure>
-        <p class="note">Prototype metrics are illustrative. Stroke labels are pattern hypotheses from IMU + pressure, to be validated against video.</p>
+        <p class="note">Mobile web-app concept from the portfolio. Future multi-device views may compare zones, but should not rank animals by “stress.”</p>
       </div>
     </section>
 
     <section class="section paper">
+      <div class="wrap">
+        <p class="eyebrow">08 / Who it is for</p>
+        <h2>Animals first. Then visitors, then staff.</h2>
+        <div class="grid-3" style="margin-top: 36px;">
+          <article class="card">
+            <h3>The animal</h3>
+            <p class="muted">Predictable quiet periods and no wearable burden. Sensing happens outside the enclosure.</p>
+          </article>
+          <article class="card">
+            <h3>The visitor</h3>
+            <p class="muted">Three-state colour plus a sentence: quiet viewing, please give space, rest period.</p>
+          </article>
+          <article class="card">
+            <h3>Care staff &amp; managers</h3>
+            <p class="muted">Adjustable, explainable summaries. USB power. No camera or audio archive to maintain.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="wrap split">
         <div>
-          <p class="eyebrow">08 / Positioning</p>
+          <p class="eyebrow">09 / Positioning</p>
           <h2>A real problem, treated as engineering.</h2>
-          <p>SmartGrip AI is a conceptual tennis performance system designed to investigate the relationship between player movement, grip pressure, and racket dynamics.</p>
-          <p>The project combines product design, embedded sensing, motion analysis, data visualization, and sports engineering. It is not “a tennis chip.” It is a method for making hidden racket–hand interactions measurable.</p>
+          <p>RestGuard demonstrates how engineering can translate an ambiguous social problem into measurable requirements while respecting uncertainty. The central design choice was to avoid “emotion detection” and instead build an explainable system around environmental events.</p>
+          <p>The project integrates industrial design, embedded systems, human–computer interaction, privacy, animal-welfare ethics and experimental planning.</p>
         </div>
         <div class="card">
           <p class="eyebrow">Next</p>
           <h3>Continue through the lab</h3>
-          <p class="muted">The wearable-science page explains how sensors work together. The module page is the hardware object. The prototype lab covers form, function, tests, and limits.</p>
+          <p class="muted">The wearable-science page explains how the three sensors work together. The module page is the hardware object. The prototype lab covers form, function, tests, and limits.</p>
           <div class="actions">
             <a class="btn primary" href="technology.html">Wearable science</a>
             <a class="btn" href="prototype.html">Prototype lab</a>
@@ -213,8 +261,8 @@
   </main>
 
   <footer class="footer wrap">
-    <div>SmartGrip AI · Concept design + proof of concept</div>
-    <div>© <span data-year></span> · Training insight, not medical advice</div>
+    <div>RestGuard · Yulin Zhang · Concept design 2026</div>
+    <div>Guidance tool, not a validated welfare product · © <span data-year></span></div>
   </footer>
   <script src="assets/js/main.js"></script>
 </body>
