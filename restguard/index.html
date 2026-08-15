@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RestGuard — Make cumulative disturbance visible</title>
+  <meta name="description" content="RestGuard is a non-contact disturbance monitor for animal-care enclosures. It watches approach, sound, and door events — without trying to read an animal’s emotions.">
+  <link rel="icon" href="../assets/images/restguard/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/restguard.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="nav">
+    <a class="brand" href="index.html"><span class="mark"></span> RestGuard</a>
+    <nav class="nav-links">
+      <a class="active" href="index.html">Overview</a>
+      <a href="technology.html">Wearable Science</a>
+      <a href="module.html">The Module</a>
+      <a href="prototype.html">Prototype Lab</a>
+      <a href="../index.html">SmartGrip</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+    <a class="nav-cta" href="module.html">View the chip</a>
+  </header>
+
+  <main id="content">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">Engineering design portfolio · 2026</p>
+        <h1>RestGuard</h1>
+        <p class="lede">Make cumulative disturbance visible — without trying to “read” an animal’s emotions.</p>
+        <div class="hero-meta">
+          <div>Sensing<strong>Non-contact</strong></div>
+          <div>Data<strong>Privacy-first</strong></div>
+          <div>Logic<strong>Explainable guidance</strong></div>
+          <div>Form<strong>100 × 70 × 30 mm</strong></div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="../assets/images/restguard/restguard-device-hero.png" alt="RestGuard mounted beside a glass enclosure where a cat rests on a sage cushion">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split top">
+        <div>
+          <p class="eyebrow">01 / The opportunity</p>
+          <h2>Many small disturbances become one invisible problem.</h2>
+        </div>
+        <div>
+          <p>A visitor approaches. Another opens the door. Conversation continues. Staff can see each moment, but the pattern that builds across a shift is hard to hold in one glance.</p>
+          <p class="muted">RestGuard sits outside the enclosure. It does not diagnose stress, store voices, or replace trained people. It turns three environmental events into a rolling score and a calm public state.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="wrap">
+        <p class="eyebrow">02 / Product concept</p>
+        <h2>Sense three events. Communicate one simple state.</h2>
+        <div class="grid-3" style="margin-top: 32px;">
+          <article class="card"><div class="num">Presence</div><h3>Approach + dwell</h3><p class="muted">Time-of-flight watches the visitor zone. A walk-by is not an event. A pause is.</p></article>
+          <article class="card"><div class="num">Sound</div><h3>Time above threshold</h3><p class="muted">A MEMS microphone is treated as a level sensor. Only short RMS summaries are kept.</p></article>
+          <article class="card"><div class="num">Door</div><h3>Open / close</h3><p class="muted">A reed switch counts handling. Magnet alignment is part of the install, not an afterthought.</p></article>
+        </div>
+        <div class="states" style="margin-top: 22px;">
+          <div class="state green"><b>Green</b><h3>Quiet viewing</h3><p class="small">Observe calmly. Colour is always paired with text.</p></div>
+          <div class="state amber"><b>Amber</b><h3>Please give space</h3><p class="small">Disturbance is accumulating in the last 30 minutes.</p></div>
+          <div class="state rest"><b>Rest</b><h3>Avoid interaction</h3><p class="small">Rest period, or staff override. Do not assume “safe to touch.”</p></div>
+        </div>
+        <p class="note">Not a diagnosis. RestGuard reports measurable events. Staff judgment always takes priority.</p>
+      </div>
+    </section>
+
+    <section class="section forest">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">03 / The module</p>
+          <h2>A wearable for the enclosure — not the animal.</h2>
+          <p>The first electronics object is a Tracer-like IMU-and-ranging board: ESP32-S3, VL53L1X, digital microphone, USB-C, RGB ring, reed header. Strap it for bench work, then hide the same thinking inside a cream 100 mm shell.</p>
+          <div class="actions">
+            <a class="btn primary" href="module.html">Open the chip page</a>
+            <a class="btn" href="technology.html">Read the sensor science</a>
+          </div>
+        </div>
+        <div>
+          <figure class="figure">
+            <img src="../assets/images/restguard/restguard-chip-tracer.png" alt="RestGuard Tracer-style assembled PCB on cream linen">
+          </figure>
+          <div class="caption"><span>RestGuard tracker · functional prototype</span><span>ESP32-S3 · VL53L1X · MEMS mic</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <figure class="figure">
+          <img src="../assets/images/restguard/restguard-device-close.png" alt="Matte cream RestGuard enclosure with a green status ring and Quiet Viewing e-paper">
+        </figure>
+        <div>
+          <p class="eyebrow">04 / Industrial design</p>
+          <h2>Compact outside. Serviceable inside.</h2>
+          <p class="muted">Rounded 100 × 70 × 30 mm enclosure. USB-C power — no sealed battery in the first concept. External mount, no animal contact. Two-piece shell with a captive rear cover so the unit can be repaired.</p>
+          <p class="muted">Sage mounting plate, cream recycled ABS/PC, black sensor bezel, silicone gasket. The light ring is fast; the e-paper is slow and readable. Together they do not depend on colour vision alone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="wrap">
+        <p class="eyebrow">05 / Who it is for</p>
+        <h2>Animals first. Then visitors, then staff.</h2>
+        <div class="grid-3" style="margin-top: 28px;">
+          <article class="card sage"><h3>The animal</h3><p class="muted">Predictable quiet. No wearable burden. Sensing stays outside the enclosure.</p></article>
+          <article class="card"><h3>The visitor</h3><p class="muted">One colour, one sentence. Quiet viewing. Please give space. Rest period.</p></article>
+          <article class="card"><h3>Care staff</h3><p class="muted">A local dashboard of counts, not recordings. Pause, reset, change thresholds.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section forest">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">06 / Staff interface</p>
+          <h2>Every score can be opened.</h2>
+          <p>D = 2P + 3O + 0.25A over a rolling 30-minute window. Approaches need dwell. Hysteresis stops the ring from flickering. Authorized staff can start a rest period when judgment should beat the formula.</p>
+        </div>
+        <figure class="figure">
+          <img src="../assets/images/restguard/restguard-staff-app.png" alt="Phone showing RestGuard staff app with Quiet viewing and score 8 of 30">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div>RestGuard · Concept design · Yulin Zhang</div>
+    <div>Guidance tool, not a welfare diagnosis · © <span data-year></span></div>
+  </footer>
+  <script src="../assets/js/restguard.js"></script>
+</body>
+</html>

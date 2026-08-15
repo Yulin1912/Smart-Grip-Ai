@@ -27,6 +27,7 @@ jobs:
           mkdir _site
           cp index.html technology.html module.html prototype.html README.md .nojekyll _site/
           cp -r assets _site/assets
+          cp -r restguard _site/restguard
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

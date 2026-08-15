@@ -11,12 +11,25 @@ The electronics object is shown as a Tracer-like assembled IMU board, in the sam
 
 ## Pages
 
+### SmartGrip AI — tennis handle system
+
 | Page | Intent |
 | --- | --- |
 | `index.html` | Cinematic product story, problem, goals, app concept |
 | `technology.html` | Multi-sensor science: gyro, accel, pressure, fusion |
 | `module.html` | Hardware object — chip photo, specs, capsule, exploded stack |
 | `prototype.html` | Form vs function prototypes, tests, limits, next work |
+
+### RestGuard — enclosure disturbance monitor
+
+Warm cream / sage / gold, matching the portfolio boards. Same Garmin + Dyson page structure, lighter and pet-facing.
+
+| Page | Intent |
+| --- | --- |
+| `restguard/index.html` | Opportunity, three events, states, device, staff UI |
+| `restguard/technology.html` | ToF, sound level, reed switch, live score `D = 2P + 3O + 0.25A` |
+| `restguard/module.html` | Tracer-like ESP32-S3 board, exploded stack, enclosure |
+| `restguard/prototype.html` | Levels A–D, validation, ethics, reflection |
 
 ## Local preview
 
@@ -33,6 +46,8 @@ Then visit `http://localhost:4173`.
 Settings → Pages → Deploy from branch `main` / root. After that the public URL is:
 
 `https://yulin1912.github.io/Smart-Grip-Ai/`
+
+RestGuard: `https://yulin1912.github.io/Smart-Grip-Ai/restguard/`
 
 ## Positioning
 

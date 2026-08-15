@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Module — RestGuard tracker chip</title>
+  <meta name="description" content="The RestGuard electronics module: a Tracer-like ESP32-S3 board for bench work, then a cream 100 mm enclosure for the enclosure wall.">
+  <link rel="icon" href="../assets/images/restguard/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/restguard.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html"><span class="mark"></span> RestGuard</a>
+    <nav class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="technology.html">Wearable Science</a>
+      <a class="active" href="module.html">The Module</a>
+      <a href="prototype.html">Prototype Lab</a>
+      <a href="../index.html">SmartGrip</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+    <a class="nav-cta" href="prototype.html">Prototype path</a>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: 120px;">
+      <div class="wrap">
+        <p class="kicker">Hardware object / Functional prototype</p>
+        <h1 class="display">The chip that watches the doorway — not the animal.</h1>
+        <p class="lede muted">Before the cream shell goes on a wall, the system has to prove three sensors can share a clock. The first object is a Tracer-like assembled board: dense, strap-able, honest.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="chip-stage" id="chip">
+          <img src="../assets/images/restguard/restguard-chip-tracer.png" alt="RestGuard Tracer-style IMU and ranging PCB, top-down product photograph">
+          <button class="hotspot" style="left: 30%; top: 40%;" aria-label="Microcontroller"></button>
+          <div class="hotspot-card" style="left: 8%; top: 16%;"><strong>ESP32-S3</strong><br>Wi-Fi / Bluetooth, local filtering, 30-minute window, no cloud required for v1.</div>
+          <button class="hotspot" style="left: 52%; top: 36%;" aria-label="Time of flight"></button>
+          <div class="hotspot-card" style="left: 56%; top: 12%;"><strong>VL53L1X ToF</strong><br>Visitor-zone ranging. Programmable ROI. Glass needs calibration.</div>
+          <button class="hotspot" style="left: 64%; top: 58%;" aria-label="Microphone"></button>
+          <div class="hotspot-card" style="left: 66%; top: 64%;"><strong>MEMS microphone</strong><br>I²S level only. Firmware must refuse to keep a waveform.</div>
+          <button class="hotspot" style="left: 40%; top: 72%;" aria-label="USB"></button>
+          <div class="hotspot-card" style="left: 12%; top: 74%;"><strong>USB-C + ring</strong><br>Power without a sealed cell. RGB ring aligns with the light pipe in the bezel.</div>
+        </div>
+        <div class="caption"><span>RestGuard tracker · photographed as a hardware object</span><span>Hover the nodes</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split top">
+        <div>
+          <p class="eyebrow">Specification · bench board</p>
+          <h2>Built to be strapped, then housed.</h2>
+          <table class="spec-table">
+            <tr><th>Controller</th><td>ESP32-S3 development class · later custom PCB</td></tr>
+            <tr><th>Presence</th><td>VL53L1X ToF, limited to local visitor zone</td></tr>
+            <tr><th>Sound</th><td>Digital MEMS microphone, RMS summaries</td></tr>
+            <tr><th>Door</th><td>External reed switch + magnet</td></tr>
+            <tr><th>Outputs</th><td>RGB status ring, small monochrome e-paper, staff button</td></tr>
+            <tr><th>Power</th><td>USB-C · no permanently sealed battery in concept 1</td></tr>
+            <tr><th>Enclosure target</th><td>100 × 70 × 30 mm, recycled ABS/PC, matte</td></tr>
+            <tr><th>Privacy</th><td>No camera · no raw audio stored or transmitted</td></tr>
+          </table>
+        </div>
+        <div>
+          <figure class="figure">
+            <img src="../assets/images/restguard/restguard-chip-angle.png" alt="Three-quarter studio photo of the RestGuard PCB on cream stone">
+          </figure>
+          <div class="caption"><span>Three-quarter · warm studio</span><span>JLCPCB-style assembled prototype</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;" id="exploded">
+      <div class="wrap">
+        <p class="eyebrow">Mechanical stack</p>
+        <h2>Exploded, then closed with captive screws.</h2>
+        <p class="muted">Front shell, dark sensor bezel and light pipe, electronics, gasket, rear shell, sage mounting plate, magnets. Component size still needs CAD tolerance checks.</p>
+      </div>
+      <div class="wrap" style="margin-top: 24px;">
+        <figure class="figure">
+          <img src="../assets/images/restguard/restguard-exploded.png" alt="Exploded RestGuard assembly in cream and sage">
+        </figure>
+      </div>
+      <div class="wrap grid-3" style="margin-top: 18px;">
+        <article class="card"><h3>Front + bezel</h3><p class="muted">Protects display and optics. Mic port, optical window, light pipe.</p></article>
+        <article class="card sage"><h3>Electronics</h3><p class="muted">Sensing, processing, ring, USB. Custom PCB only after bench placement is proven.</p></article>
+        <article class="card"><h3>Mount</h3><p class="muted">Replaceable plate so one brain fits more than one enclosure geometry.</p></article>
+      </div>
+    </section>
+
+    <section class="section forest">
+      <div class="wrap split">
+        <figure class="figure">
+          <img src="../assets/images/restguard/ppt-exploded.png" alt="Portfolio exploded render from the RestGuard presentation">
+        </figure>
+        <div>
+          <p class="eyebrow">From the portfolio boards</p>
+          <h2>The same cream and sage, drawn as a serviceable object.</h2>
+          <p>USB-C on the bottom edge. Recessed staff button. No exposed edge or wire inside the animal space. Tool-accessed rear cover. That is requirement R5 and R8, not decoration.</p>
+          <a class="btn" href="prototype.html">How the four prototype levels split the risk</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div>RestGuard · The module</div>
+    <div>Bench board first · cream shell second</div>
+  </footer>
+  <script src="../assets/js/restguard.js"></script>
+</body>
+</html>

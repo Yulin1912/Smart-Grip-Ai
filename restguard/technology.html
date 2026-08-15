@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wearable Science — Multi-Sensor | RestGuard</title>
+  <meta name="description" content="How RestGuard integrates time-of-flight, sound level, and a door reed switch into one explainable disturbance score.">
+  <link rel="icon" href="../assets/images/restguard/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/restguard.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html"><span class="mark"></span> RestGuard</a>
+    <nav class="nav-links">
+      <a href="index.html">Overview</a>
+      <a class="active" href="technology.html">Wearable Science</a>
+      <a href="module.html">The Module</a>
+      <a href="prototype.html">Prototype Lab</a>
+      <a href="../index.html">SmartGrip</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+    <a class="nav-cta" href="module.html">View the chip</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">Wearable science / Multi-sensor</p>
+        <h1>Sensors that work together, not alone.</h1>
+        <p class="lede">Presence, sound, and door state share one clock. The public ring only changes when the combined window says it should.</p>
+      </div>
+      <div class="hero-media">
+        <img src="../assets/images/restguard/restguard-tof-macro.png" alt="Macro photograph of a time-of-flight sensor on a cream lab surface">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Functional integration</p>
+        <h2>All-in-one at enclosure scale.</h2>
+        <div class="grid-4" style="margin-top: 28px;">
+          <article class="card"><div class="num">01</div><h3>Time-of-flight</h3><p class="muted">VL53L1X-class ranging. Typical 27° field, Class 1 emitter, up to 4 m from the manufacturer — RestGuard limits use to the 0.3–1.5 m visitor zone.</p></article>
+          <article class="card"><div class="num">02</div><h3>Sound level</h3><p class="muted">Digital I²S MEMS microphone. RMS minutes above a configured threshold. Never a certified meter. Never a recorder.</p></article>
+          <article class="card"><div class="num">03</div><h3>Reed switch</h3><p class="muted">Magnetic door state. Cheap, reliable, and only as good as magnet alignment.</p></article>
+          <article class="card"><div class="num">04</div><h3>Local clock</h3><p class="muted">ESP32-S3 filters samples, expires events older than 30 minutes, applies hysteresis, updates ring and e-paper within 2 s.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="wrap">
+        <p class="eyebrow">Sensor science</p>
+        <h2>What each channel actually measures.</h2>
+        <div class="sensor-tabs">
+          <button class="active" data-group="science" data-tab="tof">Time-of-flight</button>
+          <button data-group="science" data-tab="mic">Sound level</button>
+          <button data-group="science" data-tab="door">Door</button>
+          <button data-group="science" data-tab="fusion">Fusion</button>
+        </div>
+        <div class="sensor-panel" data-group="science" data-panel="tof">
+          <div class="split top">
+            <div>
+              <h3>Approach is not a walk-by</h3>
+              <p>A ToF sensor measures distance, not identity. RestGuard qualifies an approach only when a person enters the zone and stays for a minimum dwell. Glass, angle, and cover windows need site calibration. Reflections are a known risk, not a surprise.</p>
+            </div>
+            <div class="card">
+              <p class="mono small">Target · R1</p>
+              <div class="bar"><span>Zone</span><i><em data-width="70"></em></i><span>0.3–1.5 m</span></div>
+              <div class="bar"><span>Detection</span><i><em data-width="90"></em></i><span>≥90%</span></div>
+              <p class="note">Scripted approach trials. Pass-by false counts stay under 10%.</p>
+            </div>
+          </div>
+        </div>
+        <div class="sensor-panel" data-group="science" data-panel="mic" hidden>
+          <div class="split top">
+            <div>
+              <h3>A microphone that refuses to listen</h3>
+              <p>The capsule is compact and I²S-native. Firmware keeps short-window RMS summaries. No waveform, no speech, no cloud archive. Privacy is a requirement (R6), not a marketing line.</p>
+            </div>
+            <div class="card">
+              <p>After calibration, state should follow a reference meter within ±3 dB-equivalent. The device is still not a legal sound-level meter.</p>
+            </div>
+          </div>
+        </div>
+        <div class="sensor-panel" data-group="science" data-panel="door" hidden>
+          <div>
+            <h3>Handling has a switch</h3>
+            <p>Door events are weighted most heavily in the prototype score because opening the enclosure is a different class of disturbance than a quiet look. A 100-cycle fixture should capture ≥99 events.</p>
+          </div>
+        </div>
+        <div class="sensor-panel" data-group="science" data-panel="fusion" hidden>
+          <div>
+            <h3>Explainability before prediction</h3>
+            <p>Every second: read, filter, update dwell and sound timers, append qualified events, drop anything older than 30 minutes, calculate D, apply hysteresis, refresh the public state and the local summary. The system can enter amber at 11 and return to green only below 8.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section forest">
+      <div class="wrap">
+        <p class="eyebrow">Decision logic</p>
+        <h2 class="formula">D = 2P + 3O + 0.25A</h2>
+        <p>P qualified approaches · O door-open events · A minutes above the sound threshold. Prototype formula, not a medical or welfare standard.</p>
+        <div class="score-play" style="margin-top: 28px;">
+          <div class="card">
+            <label>Approaches P <span data-p-val>3</span></label>
+            <input data-p type="range" min="0" max="12" value="3">
+            <label>Door opens O <span data-o-val>0</span></label>
+            <input data-o type="range" min="0" max="8" value="0">
+            <label>Sound minutes A <span data-a-val>4</span></label>
+            <input data-a type="range" min="0" max="30" value="4">
+          </div>
+          <div>
+            <p class="mono small">Score</p>
+            <p class="formula" data-score>7.0</p>
+            <div class="state green" data-state>Quiet viewing</div>
+            <p class="note">0–10 green · 11–20 amber · &gt;20 or staff override rest</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Architecture</p>
+        <h2>Local processing keeps the logic transparent.</h2>
+        <div class="arch" style="margin-top: 24px;">
+          <div class="arch-row"><div class="mono small">Presence</div><div>ToF · approach / dwell</div></div>
+          <div class="arch-row"><div class="mono small">Sound level</div><div>MEMS · RMS only · no audio stored</div></div>
+          <div class="arch-row"><div class="mono small">Door activity</div><div>Reed + magnet · open / close counts</div></div>
+          <div class="arch-row sage"><div class="mono small">ESP32-S3</div><div>Filter · 30-minute window · score · configuration</div></div>
+          <div class="arch-row"><div class="mono small">Public display</div><div>RGB ring + e-paper · green / amber / rest</div></div>
+          <div class="arch-row"><div class="mono small">Staff interface</div><div>Button + local web app · thresholds, status, reset</div></div>
+          <div class="arch-row"><div class="mono small">Privacy-safe log</div><div>Counts and level summaries · no images or raw recordings</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div>RestGuard · Wearable science</div>
+    <div>Figures are prototype targets, not certified performance</div>
+  </footer>
+  <script src="../assets/js/restguard.js"></script>
+</body>
+</html>
