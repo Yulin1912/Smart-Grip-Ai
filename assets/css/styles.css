@@ -534,9 +534,9 @@ p {
 }
 
 .sensor-tabs button.active {
-  color: var(--ink);
-  background: var(--paper);
-  border-color: var(--paper);
+  color: #041018;
+  background: var(--blue);
+  border-color: var(--blue);
 }
 
 .sensor-panel[hidden] {
